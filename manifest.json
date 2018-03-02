@@ -1,0 +1,6 @@
+{
+  "name": "pelem",
+  "short_name": "pelem",
+  "start_url": "/",
+  "display": "standalone"
+}

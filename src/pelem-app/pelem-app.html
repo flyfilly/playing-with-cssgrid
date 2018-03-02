@@ -1,0 +1,41 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../custom-element/custom-element.html">
+
+<dom-module id="pelem-app">
+  <template>
+    <style>
+      custom-element {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      custom-element h1 {
+        --custom-element-h1-mixin : {
+          font-family : arial sans serif;
+          color : blue;
+        }
+      }
+    </style>
+    <custom-element></custom-element>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class PelemApp extends Polymer.Element {
+      static get is() { return 'pelem-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'pelem-app'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(PelemApp.is, PelemApp);
+  </script>
+</dom-module>

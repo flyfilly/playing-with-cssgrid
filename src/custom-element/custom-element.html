@@ -1,0 +1,135 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="custom-element">
+  <template>
+    <style>
+      div#content {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 10px;
+        /* transition-duration: 0.2s; */
+        grid-template-areas: 
+          "two two one one one"
+          "three three three four four"
+          "six six five five five"
+          "seven seven seven eight eight"
+          "ten ten nine nine nine";
+        /* grid-template-rows: repeat(3, minmax(250px, auto)); */
+        /* align-items: stretch;
+        justify-items: end; */
+      }
+
+      div#content:nth-child(even) {
+        background: #321914;
+        color: #FAF0E6;
+      }
+
+      div#content:nth-child(odd) {
+        background: #FAF0E6;
+        color: #321914;
+      }
+
+      div { 
+        min-height: 100px; 
+        text-align: center;
+        padding: 30px;
+      }
+
+      div#one { grid-area: one; }
+      div#two { grid-area: two; }
+      div#three { grid-area: three; }
+      div#four { grid-area: four; }
+      div#five { grid-area: five; }
+      div#six { grid-area: six; }
+      div#seven { grid-area: seven; }
+      div#eight { grid-area: eight; }
+      div#nine { grid-area: nine; }
+      div#ten { grid-area: ten; }
+
+      .center-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* div#two {
+        justify-self: center;
+        align-self: center;
+      } */
+
+      @media screen and ( min-width: 750px ) {
+        div#content {
+          grid-template-areas: 
+            "two two two two two"
+            "one three three five five"
+            "one three three four six"
+            "one seven seven seven eight"
+            "nine nine nine ten ten";
+
+          /* transform: rotateZ(-45deg) scale(0.7); */
+        }
+      }
+    </style>
+    <div id="content">
+      <div id="one" class="center-content">1</div>
+      <div id="two" class="center-content">2</div>
+      <div id="three" class="center-content">3</div>
+      <div id="four" class="center-content">4</div>
+      <div id="five" class="center-content">5</div>
+      <div id="six" class="center-content">6</div>
+      <div id="seven" class="center-content">7</div>
+      <div id="eight" class="center-content">8</div>
+      <div id="nine" class="center-content">9</div>
+      <div id="ten" class="center-content">10</div>
+      <!-- <div id="eleven" class="center-content">11</div>
+      <div id="twelve" class="center-content">12</div>
+      <div id="thirteen" class="center-content">13</div>
+      <div id="fourteen" class="center-content">14</div>
+      <div id="fifteen" class="center-content">15</div>
+      <div id="sixteen" class="center-content">16</div>
+      <div id="seventeen" class="center-content">17</div>
+      <div id="eighteen" class="center-content">18</div>
+      <div id="nineteen" class="center-content">19</div>
+      <div id="twenty" class="center-content">20</div> -->
+    </div>
+  </template>
+
+  <script>
+    class CustomElement extends Polymer.Element {
+      static get is( ) { return "custom-element"; }
+
+      static get properties( ) {
+        return { };
+      }
+
+      constructor( ) {
+        super( );
+        console.log( "I am created" );
+      }
+
+      ready( ) {
+        super.ready( );
+        console.log( "I am ready" );
+      }
+
+      connectedCallback( ) {
+        super.connectedCallback( );
+        console.log( "I am attached" );
+      }
+
+      disconnectedCallback( ) {
+        super.disconnectedCallback( );
+        console.log( "I am detached" );
+      }
+
+      attributeChangedCallback( ) {
+        super.attributeChangedCallback( );
+        console.log( "I have an attribute change" );
+      }
+
+    }
+
+    customElements.define( CustomElement.is, CustomElement );
+  </script>
+</dom-module>
